@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+     <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head 
+             content must come *after* these tags -->
+        <title>Svin the Cat game</title>
+             <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-social.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+         <link href="css/bootstrap-theme.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/mystyles.css" rel="stylesheet"> 
+<style>
+ img { 
+    position:absolute; } 
+</style>
+</head>
+<body onload = "generateFaces()" style="padding:-150px 0px 100px 0px;">
+            <div style="background:grey; color: white; text-align: center; ">
+                <div>
+                    <h1>Matching Game</h1>
+                    <p style="padding:0px; border: 2px"></p>
+                    <p>This is my cat Svin.
+                        The right site is the exact copy of the left side, but on the left side there is ONE EXTRA cat. Find the extra image on the left and click on it</p>
+                </div>
+                <div>
+                </div>
+            </div>
+    <div>
+        <div id="leftSide"; style="position: absolute; width:500px; height:500px;"></div>
+        <div id="rightSide"; style="position: absolute; width:500px; height:500px; left: 500px; border-left: 1px solid black"></div>
+    </div>
+<script>
+	var numberOfFaces = 5;
+	var level = 1;
+	var theLeftSide = document.getElementById("leftSide");
+	var theRightSide = document.getElementById("rightSide");
+	var theBody = document.getElementsByTagName("body")[0];
+	
+	function clear( side){
+		var myNode = side; 
+		var fc = myNode.firstChild;
+
+		while( fc ) {
+			myNode.removeChild( fc );
+			fc = myNode.firstChild;
+		}
+	};
+	
+	function generateFaces() {
+		var min = 0;
+		var max = 400;
+		var top = Math.floor(Math.random() * (max - min + 1)) + min;
+		var left = Math.floor(Math.random() * (max - min + 1)) + min;
+		var leftSideImages;
+		clear(theLeftSide);
+		clear(theRightSide);
+		for (i = 0; i < numberOfFaces; i++){
+                var theImg = document.createElement("img");
+                theImg.src = "svinicon.png";
+				theImg.style.top = top + "px";
+				theImg.style.left = left + "px";
+                theLeftSide.appendChild(theImg);
+				top = Math.floor(Math.random() * (max - min + 1)) + min;
+				left = Math.floor(Math.random() * (max - min + 1)) + min;	
+				
+								
+		}
+		leftSideImages = theLeftSide.cloneNode(true);
+		leftSideImages.removeChild(leftSideImages.lastChild);
+		theRightSide.appendChild(leftSideImages);
+		
+		
+		theLeftSide.lastChild.onclick = function nextLevel(event){
+        event.stopPropagation();
+		numberOfFaces += 5;
+		level++;
+        generateFaces(); 
+		};
+		
+	theBody.onclick = function gameOver() {
+    alert("Game Over!\nYou passed " + level + " levels");
+    theBody.onclick = null;
+    theLeftSide.lastChild.onclick = null;
+	generateFaces();
+	}; 
+	} //end of generateFaces
+
+</script>
+       <!-- Bootstrap scripts-->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+</body >
+</html>

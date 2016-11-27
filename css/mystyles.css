@@ -1,0 +1,84 @@
+.navbar-brand{
+    font-family: 'Lato', sans-serif;
+    color:#f2f2f2;
+    font-size: 30px;
+    font-weight: bold;
+    vertical-align:middle;
+    padding-top: 20px;
+}
+.row-header{
+    margin:10px auto;
+    background-color: #f2f2f2;
+}
+.pagination-centered {
+    text-align: center;
+}
+.row-content {
+    padding: 20px 0px 20px 0px;
+    border-bottom: 3px ridge; 
+}
+
+.row-footer{
+    background-color: #f2f2f2;
+    margin:40px auto;
+    color:gray;
+}
+
+texts{
+    margin:0px;
+    color: #72AB00;
+}
+
+.btn-success{
+    background: #72AB00 !important; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+body{
+    padding:120px 0px 100px 0px;
+    z-index:0;
+}
+
+
+.navbar-inverse {
+    min-height: 120px;
+    border-bottom-color: #72AB00;
+    border-bottom-width: medium;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+ .navbar-inverse .navbar-nav > .open > a:hover,
+ .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu> li> a,
+.navbar-inverse .navbar-nav .open .dropdown-menu {
+    background-color: #000000;
+    color:#eeeeee;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
+    background: grey;
+    color:#eeeeee;
+}
+
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background: #7986CB ;
+    color:floralwhite;
+}
