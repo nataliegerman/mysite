@@ -4,7 +4,9 @@
     font-size: 30px;
     font-weight: bold;
     vertical-align:middle;
-    padding-top: 20px;
+}
+.nav-subtitle{
+    vertical-align:middle;
 }
 .row-header{
     margin:10px auto;
@@ -49,6 +51,8 @@ body{
 
 .navbar-inverse {
     min-height: 120px;
+    padding-left: 10px;
+    padding-bottom: 20px;
     border-bottom-color: #72AB00;
     border-bottom-width: medium;
 }
